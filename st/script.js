@@ -150,6 +150,8 @@ for (const [theme, config] of themes) {
             console.log('Event: "cancel"', instance);
         }).on('swatchselect', (color, instance) => {
             console.log('Event: "swatchselect"', color, instance);
+        }).on('add', (color, instance) => {
+            console.log('Event: "add"', color, instance);
         });
         /* eslint-enable no-console */
     });

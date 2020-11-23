@@ -29,6 +29,7 @@ class Pickr {
         'btn:clear': 'Clear',
 
         // Strings used for aria-labels
+        'aria:btn:add': 'add to swatch',
         'aria:btn:save': 'save and close',
         'aria:btn:cancel': 'cancel and close',
         'aria:btn:clear': 'clear and close',
@@ -639,6 +640,10 @@ class Pickr {
                     this._emit('change', color);
                 })
             );
+
+            if (_root.interaction.add) {
+                this._emit('add', this._color);
+            }
 
             return true;
         }
