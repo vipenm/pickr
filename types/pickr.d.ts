@@ -88,6 +88,7 @@ declare namespace Pickr {
                 cancel?: boolean;
                 clear?: boolean;
                 save?: boolean;
+                add?: boolean
             };
         };
 
@@ -95,6 +96,7 @@ declare namespace Pickr {
             save?: string;
             clear?: string;
             cancel?: string;
+            add?: string;
         }
     }
 
@@ -126,6 +128,7 @@ declare namespace Pickr {
         'hide' |
         'show' |
         'save' |
+        'add' |
         'clear' |
         'change' |
         'changestop' |

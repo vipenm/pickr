@@ -22,6 +22,7 @@ class Pickr {
         'ui:dialog': 'color picker dialog',
         'btn:toggle': 'toggle color picker dialog',
         'btn:swatch': 'color swatch',
+        'btn:add': 'Add',
         'btn:last-color': 'use previous color',
         'btn:save': 'Save',
         'btn:cancel': 'Cancel',
@@ -40,7 +41,7 @@ class Pickr {
     // Default options
     static DEFAULT_OPTIONS = {
         appClass: null,
-        theme: 'classic',
+        theme: 'nano',
         useAsButton: false,
         padding: 8,
         disabled: false,
@@ -94,7 +95,8 @@ class Pickr {
         change: [],
         changestop: [],
         cancel: [],
-        swatchselect: []
+        swatchselect: [],
+        add: []
     };
 
     constructor(opt) {
@@ -380,6 +382,9 @@ class Pickr {
 
             // Clear color
             _.on(_root.interaction.clear, 'click', () => this._clearColor()),
+
+            // Add current color to swatch
+            _.on(_root.interaction.add, 'click', () => this.addSwatch(this._color.toRGBA().toString(0))),
 
             // Select last color on click
             _.on([
